@@ -265,6 +265,7 @@ syn match rAssign "->\{1,2}"
 
 " Special
 syn match rDelimiter "[,;:]"
+syn match rAssign    ':='
 
 " Error
 if exists("g:r_syntax_folding")
