@@ -264,7 +264,8 @@ syn match rAssign "<\{1,2}-"
 syn match rAssign "->\{1,2}"
 
 " Special
-syn match rDelimiter "[,;:]"
+syn match rDelimiter "[,;]"
+syn match rDelimiter "[:]\ze[^=]"
 syn match rAssign    ':='
 
 " Error
