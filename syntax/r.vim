@@ -204,15 +204,15 @@ syn keyword rStatement   break next return
 syn keyword rConditional if else
 syn keyword rRepeat      for in repeat while
 
-" Constant (not really)
-syn keyword rConstant T F LETTERS letters month.abb month.name pi
-syn keyword rConstant R.version.string
+" Built in variables (highlighted as constants)
+syn keyword rBuiltin LETTERS letters month.abb month.name pi
+syn keyword rBuiltin R.version.string version
 
 syn keyword rNumber   NA_integer_ NA_real_ NA_complex_ NA_character_
 
 " Constants
 syn keyword rConstant NULL
-syn keyword rBoolean  FALSE TRUE
+syn keyword rBoolean  FALSE TRUE F T
 syn keyword rNumber   NA Inf NaN
 
 " integer
@@ -343,6 +343,7 @@ endif
 hi def link rAssign      Statement
 hi def link rBoolean     Boolean
 hi def link rBraceError  Error
+hi def link rBuiltin     Constant
 hi def link rComment     Comment
 hi def link rTodoParen   Comment
 hi def link rTodoInfo    SpecialComment
