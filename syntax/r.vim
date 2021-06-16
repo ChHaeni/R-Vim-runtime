@@ -268,7 +268,7 @@ syn match rDelimiter "[,;]"
 syn match rDelimiter "[:]\ze[^=]"
 syn match rAssign    ':='
 
-" Error
+" Folding
 if exists("g:r_syntax_folding")
   syn region rRegion matchgroup=Delimiter start=/(/ matchgroup=Delimiter end=/)/ transparent contains=ALLBUT,rError,rBraceError,rCurlyError fold
   syn region rRegion matchgroup=Delimiter start=/{/ matchgroup=Delimiter end=/}/ transparent contains=ALLBUT,rError,rBraceError,rParenError fold
