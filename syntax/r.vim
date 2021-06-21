@@ -215,6 +215,8 @@ syn keyword rConstant NULL
 syn keyword rBoolean  FALSE TRUE F T
 syn keyword rNumber   NA Inf NaN
 
+" data.table specials
+syn keyword rDataTable .SD .BY .N .I .GRP .NGRP .EACHI
 " integer
 syn match rInteger "\<\d\+L"
 syn match rInteger "\<0x\([0-9]\|[a-f]\|[A-F]\)\+L"
@@ -380,6 +382,7 @@ hi def link rStatement   Statement
 hi def link rString      String
 hi def link rStrError    Error
 hi def link rType        Type
+hi def link rDataTable   Constant
 if g:r_syntax_hl_roxygen
   hi def link rOTitleTag   Operator
   hi def link rOTag        Operator
