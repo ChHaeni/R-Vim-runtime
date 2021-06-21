@@ -322,7 +322,7 @@ if &filetype == "rhelp"
 endif
 
 " Type
-syn keyword rType array category character complex double function integer list logical matrix numeric vector data.frame
+syn keyword rType array factor character complex double function integer list logical matrix numeric vector data.frame data.table
 
 " Name of object with spaces
 if &filetype != "rmd" && &filetype != "rrst"
