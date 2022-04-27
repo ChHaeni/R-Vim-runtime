@@ -55,7 +55,7 @@ syn match rComment contains=@Spell,rCommentTodo,rTodoParen "#.*"
 " includes
 syn include @Cpp $VIMRUNTIME/syntax/cpp.vim
 " cppFunction
-syn region RcppFunction start="\(cppFunction('\)\@<="he=e+1  skip=/\\\\\|\\'/ end=/\('\)\@=/hs=s-1 contains=@Cpp contained
+syn region rRcppCode matchgroup=GruvboxFg2 start="cppFunction('"he=e+1  skip=/\\\\\|\\'/ matchgroup=GruvboxFg2 end=/')/hs=s-1 contains=@Cpp contained
 
 " Roxygen
 if g:r_syntax_hl_roxygen
@@ -171,7 +171,7 @@ else
   " string enclosed in double quotes
   syn region rString contains=rSpecial,rStrError,@Spell start=/"/ skip=/\\\\\|\\"/ end=/"/
   " string enclosed in single quotes
-  syn region rString contains=rSpecial,rStrError,@Spell,RcppFunction start=/'/ skip=/\\\\\|\\'/ end=/'/
+  syn region rString contains=rSpecial,rStrError,@Spell,rRcppCode start=/'/ skip=/\\\\\|\\'/ end=/'/
 endif
 
 syn match rStrError display contained "\\."
@@ -298,7 +298,7 @@ endif
 " Only use Nvim-R to highlight functions if they should not be highlighted
 " according to a generic pattern
 if g:r_syntax_fun_pattern == 1
-  syn match rFunction '[0-9a-zA-Z_\.]\+\s*\ze('
+  syn match rFunction '[0-9a-zA-Z_\.]\+\s*\ze(' contains=rRcppCode
 else
   " Nvim-R:
   runtime R/functions.vim
