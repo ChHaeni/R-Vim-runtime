@@ -51,6 +51,12 @@ syn keyword rTodoKeyw BUG FIXME NOTE TODO contained
 syn match rTodoInfo "(\zs.\{-}\ze)" contained
 syn match rComment contains=@Spell,rCommentTodo,rTodoParen "#.*"
 
+""" Rcpp
+" includes
+syn include @Cpp $VIMRUNTIME/syntax/cpp.vim
+" cppFunction
+syn region RcppFunction start="\(cppFunction('\)\@<="he=e+1  skip=/\\\\\|\\'/ end=/\('\)\@=/hs=s-1 contains=@Cpp contained
+
 " Roxygen
 if g:r_syntax_hl_roxygen
   " A roxygen block can start at the beginning of a file (first version) and
@@ -156,7 +162,6 @@ if g:r_syntax_hl_roxygen
   syn match rOTag contained "@order"
 endif
 
-
 if &filetype == "rhelp"
   " string enclosed in double quotes
   syn region rString contains=rSpecial,@Spell start=/"/ skip=/\\\\\|\\"/ end=/"/
@@ -166,7 +171,7 @@ else
   " string enclosed in double quotes
   syn region rString contains=rSpecial,rStrError,@Spell start=/"/ skip=/\\\\\|\\"/ end=/"/
   " string enclosed in single quotes
-  syn region rString contains=rSpecial,rStrError,@Spell start=/'/ skip=/\\\\\|\\'/ end=/'/
+  syn region rString contains=rSpecial,rStrError,@Spell,RcppFunction start=/'/ skip=/\\\\\|\\'/ end=/'/
 endif
 
 syn match rStrError display contained "\\."
