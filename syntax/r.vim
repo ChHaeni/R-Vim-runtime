@@ -55,7 +55,7 @@ syn match rComment contains=@Spell,rCommentTodo,rTodoParen "#.*"
 " includes
 syn include @Cpp $VIMRUNTIME/syntax/cpp.vim
 " cppFunction
-syn region rRcppCode matchgroup=GruvboxFg2 start="cppFunction('"he=e+1  skip=/\\\\\|\\'/ matchgroup=GruvboxFg2 end=/')/hs=s-1 contains=@Cpp contained
+syn region rRcppCode matchgroup=GruvboxFg2 start="cppFunction('"he=e+1  skip=/\\\\\|\\'/ matchgroup=GruvboxFg2 end=/'\(.*\)*)/hs=s-1 contains=@Cpp contained
 
 " Roxygen
 if g:r_syntax_hl_roxygen
