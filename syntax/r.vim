@@ -59,8 +59,8 @@ syn include @Cpp $VIMRUNTIME/syntax/cpp.vim
 syn region rRcppCode matchgroup=GruvboxFg2 start="cppFunction('"he=e+1  skip=/\\\\\|\\'/ matchgroup=GruvboxFg2 end=/'\(.*\)*)/hs=s-1 contains=@Cpp contained
 syn region rRcppCode matchgroup=GruvboxFg2 start="sourceCpp(\(.*\)*code *= *'"he=e+1  skip=/\\\\\|\\'/ matchgroup=GruvboxFg2 end=/'\(.*\)*)/hs=s-1 contains=@Cpp contained
 " inline
-syn region rRcppCode matchgroup=GruvboxFg2 start="rcpp('"he=e+1  skip=/\\\\\|\\'/ matchgroup=GruvboxFg2 end=/'\(.*\)*)/hs=s-1 contains=@Cpp contained
-syn region rRcppCode matchgroup=GruvboxFg2 start="cxxfunction('"he=e+1  skip=/\\\\\|\\'/ matchgroup=GruvboxFg2 end=/'\(.*\)*)/hs=s-1 contains=@Cpp contained
+syn region rRcppCode matchgroup=GruvboxFg2 start="rcpp(\(.*\)*includes *= *'"he=e+1  skip=/\\\\\|\\'/ matchgroup=GruvboxFg2 end=/'\(.*\)*)/hs=s-1 contains=@Cpp contained
+syn region rRcppCode matchgroup=GruvboxFg2 start="cxxfunction(\(.*\)*includes *= *'"he=e+1  skip=/\\\\\|\\'/ matchgroup=GruvboxFg2 end=/'\(.*\)*)/hs=s-1 contains=@Cpp contained
 
 " Roxygen
 if g:r_syntax_hl_roxygen
