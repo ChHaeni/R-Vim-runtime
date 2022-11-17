@@ -273,16 +273,16 @@ syn match rAssign    ':='
 
 " Folding
 if exists("g:r_syntax_folding")
-  syn region rRegion matchgroup=Delimiter start=/(/ matchgroup=Delimiter end=/)/ transparent contains=ALLBUT,rError,rBraceError,rCurlyError fold
-  syn region rRegion matchgroup=Delimiter start=/{/ matchgroup=Delimiter end=/}/ transparent contains=ALLBUT,rError,rBraceError,rParenError fold
-  syn region rRegion matchgroup=Delimiter start=/\[/ matchgroup=Delimiter end=/]/ transparent contains=ALLBUT,rError,rCurlyError,rParenError fold
-  syn region rSection1 matchgroup=Title start=/^#.*[-]\{4,}/ end=/^#.*[-]\{4,}/ms=s-2,me=s-1 transparent contains=ALL fold
-  syn region rSection2 matchgroup=Title start=/^#.*[=]\{4,}/ end=/^#.*[=]\{4,}/ms=s-2,me=s-1 transparent contains=ALL fold
-  syn region rSection3 matchgroup=Title start=/^#.*[#]\{4,}/ end=/^#.*[#]\{4,}/ms=s-2,me=s-1 transparent contains=ALL fold
+  syn region rRegion matchgroup=Delimiter start=/(/ matchgroup=Delimiter end=/)/ transparent contains=ALLBUT,rError,rBraceError,rCurlyError,rTodoKeyw,rTodoParen,rTodoInfo,rCommentTodo  fold
+  syn region rRegion matchgroup=Delimiter start=/{/ matchgroup=Delimiter end=/}/ transparent contains=ALLBUT,rError,rBraceError,rParenError,rTodoKeyw,rTodoParen,rTodoInfo,rCommentTodo  fold
+  syn region rRegion matchgroup=Delimiter start=/\[/ matchgroup=Delimiter end=/]/ transparent contains=ALLBUT,rError,rCurlyError,rParenError,rTodoKeyw,rTodoParen,rTodoInfo,rCommentTodo  fold
+  syn region rSection1 matchgroup=Title start=/^#.*[-]\{4,}/ end=/^#.*[-]\{4,}/ms=s-2,me=s-1 transparent contains=ALL,rTodoKeyw,rTodoParen,rTodoInfo,rCommentTodo fold
+  syn region rSection2 matchgroup=Title start=/^#.*[=]\{4,}/ end=/^#.*[=]\{4,}/ms=s-2,me=s-1 transparent contains=ALL,rTodoKeyw,rTodoParen,rTodoInfo,rCommentTodo fold
+  syn region rSection3 matchgroup=Title start=/^#.*[#]\{4,}/ end=/^#.*[#]\{4,}/ms=s-2,me=s-1 transparent contains=ALL,rTodoKeyw,rTodoParen,rTodoInfo,rCommentTodo fold
 else
-  syn region rRegion matchgroup=Delimiter start=/(/ matchgroup=Delimiter end=/)/ transparent contains=ALLBUT,rError,rBraceError,rCurlyError
-  syn region rRegion matchgroup=Delimiter start=/{/ matchgroup=Delimiter end=/}/ transparent contains=ALLBUT,rError,rBraceError,rParenError
-  syn region rRegion matchgroup=Delimiter start=/\[/ matchgroup=Delimiter end=/]/ transparent contains=ALLBUT,rError,rCurlyError,rParenError
+  syn region rRegion matchgroup=Delimiter start=/(/ matchgroup=Delimiter end=/)/ transparent contains=ALLBUT,rError,rBraceError,rCurlyError,rTodoKeyw,rTodoParen,rTodoInfo,rCommentTodo 
+  syn region rRegion matchgroup=Delimiter start=/{/ matchgroup=Delimiter end=/}/ transparent contains=ALLBUT,rError,rBraceError,rParenError,rTodoKeyw,rTodoParen,rTodoInfo,rCommentTodo 
+  syn region rRegion matchgroup=Delimiter start=/\[/ matchgroup=Delimiter end=/]/ transparent contains=ALLBUT,rError,rCurlyError,rParenError,rTodoKeyw,rTodoParen,rTodoInfo,rCommentTodo 
 endif
 
 syn match rError      "[)\]}]"
