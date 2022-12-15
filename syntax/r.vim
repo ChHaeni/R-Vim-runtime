@@ -45,8 +45,8 @@ let g:r_syntax_hl_roxygen = get(g:, 'r_syntax_hl_roxygen', 1)
 syn case match
 
 " Comment
-syn match rCommentTodo contained "\(BUG\|FIXME\|NOTES\|NOTE\|TODO\|XXX\|OPTIMIZE\|HACK\|QUESTION\|Q\|A\|OPEN\):"
-syn match rTodoParen contained "\(BUG\|FIXME\|NOTES\|NOTE\|TODO\|XXX\|OPTIMIZE\|HACK\|QUESTION\|Q\|A\|OPEN\)\s*(.\{-})\s*:" contains=rTodoKeyw,rTodoInfo transparent
+syn match rCommentTodo contained "\(BUG\|FIXME\|NOTES\|NOTE\|TODO\|XXX\|OPTIMIZE\|HACK\|QUESTION\|\(#\|\s\)\zsQ\|\(#\|\s\)\zsA\|OPEN\):"
+syn match rTodoParen contained "\(BUG\|FIXME\|NOTES\|NOTE\|TODO\|XXX\|OPTIMIZE\|HACK\|QUESTION\|\(#\|\s\)\zsQ\|\(#\|\s\)\zsA\|OPEN\)\s*(.\{-})\s*:" contains=rTodoKeyw,rTodoInfo transparent
 syn keyword rTodoKeyw BUG FIXME NOTES NOTE TODO XXX OPTIMIZE HACK QUESTION Q A OPEN contained
 syn match rTodoInfo "(\zs.\{-}\ze)" contained
 syn match rComment contains=@Spell,rCommentTodo,rTodoParen "#.*"
