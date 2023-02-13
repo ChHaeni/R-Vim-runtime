@@ -279,6 +279,7 @@ if exists("g:r_syntax_folding")
   syn region rSection1 matchgroup=Title start=/^#.*[-]\{4,}/ end=/^#.*[-]\{4,}/ms=s-2,me=s-1 transparent contains=ALL,rTodoKeyw,rTodoParen,rTodoInfo,rCommentTodo fold
   syn region rSection2 matchgroup=Title start=/^#.*[=]\{4,}/ end=/^#.*[=]\{4,}/ms=s-2,me=s-1 transparent contains=ALL,rTodoKeyw,rTodoParen,rTodoInfo,rCommentTodo fold
   syn region rSection3 matchgroup=Title start=/^#.*[#]\{4,}/ end=/^#.*[#]\{4,}/ms=s-2,me=s-1 transparent contains=ALL,rTodoKeyw,rTodoParen,rTodoInfo,rCommentTodo fold
+  syn region rSection4 matchgroup=Title start=/^#.*[~]\{4,}/ end=/^#.*[~]\{4,}/ms=s-2,me=s-1 transparent contains=ALL,rTodoKeyw,rTodoParen,rTodoInfo,rCommentTodo fold
 else
   syn region rRegion matchgroup=Delimiter start=/(/ matchgroup=Delimiter end=/)/ transparent contains=ALLBUT,rError,rBraceError,rCurlyError,rTodoKeyw,rTodoParen,rTodoInfo,rCommentTodo 
   syn region rRegion matchgroup=Delimiter start=/{/ matchgroup=Delimiter end=/}/ transparent contains=ALLBUT,rError,rBraceError,rParenError,rTodoKeyw,rTodoParen,rTodoInfo,rCommentTodo 
