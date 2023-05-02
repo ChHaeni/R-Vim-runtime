@@ -46,9 +46,12 @@ syn case match
 
 " Comment
 syn match rCommentTodo contained "\(BUG\|FIXME\|NOTES\|NOTE\|TODO\|XXX\|OPTIMIZE\|HACK\|QUESTION\|\(#\|\s\)\zsQ\|\(#\|\s\)\zsA\|OPEN\):"
-syn match rTodoParen contained "\(BUG\|FIXME\|NOTES\|NOTE\|TODO\|XXX\|OPTIMIZE\|HACK\|QUESTION\|\(#\|\s\)\zsQ\|\(#\|\s\)\zsA\|OPEN\)\s*(.\{-})\s*:" contains=rTodoKeyw,rTodoInfo transparent
+syn match rTodoParen contained "\(BUG\|FIXME\|NOTES\|NOTE\|TODO\|XXX\|OPTIMIZE\|HACK\|QUESTION\|\(#\|\s\)\zsQ\|\(#\|\s\)\zsA\|OPEN\)\s*(.\{-})\s*:" contains=rTodoKeyw,rTodoInfoParen transparent
 syn keyword rTodoKeyw BUG FIXME NOTES NOTE TODO XXX OPTIMIZE HACK QUESTION Q A OPEN contained
-syn match rTodoInfo "(\zs.\{-}\ze)" contained
+syn match rTodoInfoParen "(.\{-})\s*:" contained contains=rTodoInfoP1,rTodoInfoP2,rTodoInfo transparent
+syn match rTodoInfo "[^():]\+" contained 
+syn match rTodoInfoP1 "(" contained
+syn match rTodoInfoP2 ")\s*:" contained
 syn match rComment contains=@Spell,rCommentTodo,rTodoParen "#.*"
 
 """ Rcpp
@@ -358,6 +361,8 @@ hi def link rTodoParen   Comment
 hi def link rTodoInfo    SpecialComment
 hi def link rCommentTodo Todo
 hi def link rTodoKeyw    Todo
+hi def link rTodoInfoP1  Todo
+hi def link rTodoInfoP2  Todo
 hi def link rComplex     Number
 hi def link rConditional Conditional
 hi def link rConstant    Constant
