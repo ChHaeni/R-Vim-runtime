@@ -45,9 +45,9 @@ let g:r_syntax_hl_roxygen = get(g:, 'r_syntax_hl_roxygen', 1)
 syn case match
 
 " Comment
-syn match rCommentTodo contained "\(BUG\|FIXME\|NOTES\|NOTE\|TODO\|XXX\|OPTIMIZE\|HACK\|QUESTION\|\(#\|\s\)\zsQ\|\(#\|\s\)\zsA\|OPEN\):"
-syn match rTodoParen contained "\(BUG\|FIXME\|NOTES\|NOTE\|TODO\|XXX\|OPTIMIZE\|HACK\|QUESTION\|\(#\|\s\)\zsQ\|\(#\|\s\)\zsA\|OPEN\)\s*(.\{-})\s*:" contains=rTodoKeyw,rTodoInfoParen transparent
-syn keyword rTodoKeyw BUG FIXME NOTES NOTE TODO XXX OPTIMIZE HACK QUESTION Q A OPEN contained
+syn match rCommentTodo contained "\(BUG\|FIXME\|NOTES\|NOTE\|TODO\|XXX\|OPTIMIZE\|HACK\|QUESTION\|REPORT\|\(#\|\s\)\zsQ\|\(#\|\s\)\zsA\|OPEN\):"
+syn match rTodoParen contained "\(BUG\|FIXME\|NOTES\|NOTE\|TODO\|XXX\|OPTIMIZE\|HACK\|QUESTION\|REPORT\|\(#\|\s\)\zsQ\|\(#\|\s\)\zsA\|OPEN\)\s*(.\{-})\s*:" contains=rTodoKeyw,rTodoInfoParen transparent
+syn keyword rTodoKeyw BUG FIXME NOTES NOTE TODO XXX OPTIMIZE HACK QUESTION REPORT Q A OPEN contained
 syn match rTodoInfoParen "(.\{-})\s*:" contained contains=rTodoInfoP1,rTodoInfoP2,rTodoInfo transparent
 syn match rTodoInfo "[^():]\+" contained 
 syn match rTodoInfoP1 "(" contained
