@@ -44,15 +44,22 @@ let g:r_syntax_hl_roxygen = get(g:, 'r_syntax_hl_roxygen', 1)
 
 syn case match
 
-" Comment
+""" Comment
+" Todo keywords
 syn match rCommentTodo contained "\(BUG\|FIXME\|NOTES\|NOTE\|TODO\|XXX\|OPTIMIZE\|HACK\|QUESTION\|REPORT\|\(#\|\s\)\zsQ\|\(#\|\s\)\zsA\|OPEN\):"
+" Todo incl. parenthesis
 syn match rTodoParen contained "\(BUG\|FIXME\|NOTES\|NOTE\|TODO\|XXX\|OPTIMIZE\|HACK\|QUESTION\|REPORT\|\(#\|\s\)\zsQ\|\(#\|\s\)\zsA\|OPEN\)\s*(.\{-})\s*:" contains=rTodoKeyw,rTodoInfoParen transparent
 syn keyword rTodoKeyw BUG FIXME NOTES NOTE TODO XXX OPTIMIZE HACK QUESTION REPORT Q A OPEN contained
 syn match rTodoInfoParen "(.\{-})\s*:" contained contains=rTodoInfoP1,rTodoInfoP2,rTodoInfo transparent
 syn match rTodoInfo "[^():]\+" contained 
 syn match rTodoInfoP1 "(" contained
 syn match rTodoInfoP2 ")\s*:" contained
-syn match rComment contains=@Spell,rCommentTodo,rTodoParen "#.*"
+" Here
+syn match rCommentHere contained ".*\(CONTINUE\s\+HERE\|continue\s\+here\|HERE\|hier\s\+bin\s\+ich\|HIER\s\+BIN\s\+ICH\)\s*!!!\+.*" contains=rHereKeyw
+syn match rHereKeyw contained "\(CONTINUE\s\+HERE\|continue\s\+here\|HERE\|hier\s\+bin\s\+ich\|HIER\s\+BIN\s\+ICH\)\s*!!!\+"
+" comment
+syn match rComment contains=@Spell,rCommentTodo,rTodoParen,rCommentHere "#.*"
+
 
 """ Rcpp
 " includes
@@ -363,6 +370,8 @@ hi def link rCommentTodo Todo
 hi def link rTodoKeyw    Todo
 hi def link rTodoInfoP1  Todo
 hi def link rTodoInfoP2  Todo
+hi def link rCommentHere PreProc
+hi def link rHereKeyw    Conditional
 hi def link rComplex     Number
 hi def link rConditional Conditional
 hi def link rConstant    Constant
