@@ -55,8 +55,8 @@ syn match rTodoInfo "[^():]\+" contained
 syn match rTodoInfoP1 "(" contained
 syn match rTodoInfoP2 ")\s*:" contained
 " Here
-syn match rCommentHere contained ".*\(CONTINUE\s\+HERE\|continue\s\+here\|HERE\|hier\s\+bin\s\+ich\|HIER\s\+BIN\s\+ICH\)\s*!!!\+.*" contains=rHereKeyw
-syn match rHereKeyw contained "\(CONTINUE\s\+HERE\|continue\s\+here\|HERE\|hier\s\+bin\s\+ich\|HIER\s\+BIN\s\+ICH\)\s*!!!\+"
+syn match rCommentHere contained ".*\(CONTINUE\s\+HERE\|continue\s\+here\|HERE\|hier\s\+[^!]*\|HIER\s\+[^!]*\)\s*!!!\+.*" contains=rHereKeyw
+syn match rHereKeyw contained "\(CONTINUE\s\+HERE\|continue\s\+here\|HERE\|hier\s\+[^!]*\|HIER\s\+[^!]*\)\s*!!!\+"
 " comment
 syn match rComment contains=@Spell,rCommentTodo,rTodoParen,rCommentHere "#.*"
 
