@@ -219,6 +219,8 @@ syn keyword rBuiltin LETTERS letters month.abb month.name pi
 syn keyword rBuiltin R.version.string version
 
 syn keyword rNumber   NA_integer_ NA_real_ NA_complex_ NA_character_
+" lubridate NAs
+syn keyword rNumber   NA_POSIXct_ NA_Date_
 
 " Constants
 syn keyword rConstant NULL
